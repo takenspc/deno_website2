@@ -221,7 +221,13 @@ function Manual(): React.ReactElement {
   return (
     <div>
       <Head>
-        <title>Manual | Deno</title>
+        {pageList[pageIndex] && version !== "" ? (
+          <title>
+            {pageList[pageIndex].name} | Deno {version}
+          </title>
+        ) : (
+          <title>Manual | Deno</title>
+        )}
         <link
           rel="preconnect"
           href="https://BH4D9OD16A-dsn.algolia.net"
